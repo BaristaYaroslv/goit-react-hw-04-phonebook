@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const NAME_STORAGE = 'Contacts_Phonebook';
 
 function saveData(data) {
@@ -5,7 +7,7 @@ function saveData(data) {
     const serializedState = JSON.stringify(data);
     localStorage.setItem(NAME_STORAGE, serializedState);
   } catch (error) {
-    console.error('Set state error: ', error.message);
+      Notify.failure(`Set state error: ${error.message} `);
   }
 }
 

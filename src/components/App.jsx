@@ -42,7 +42,7 @@ export class App extends Component {
     );
 
     if(existingContact) {
-      window.alert(`${data.name} is already in contacts`);
+      Notify.failure(`${data.name} is already in contacts`);
       return;
     }; 
 
